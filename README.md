@@ -2,7 +2,7 @@
 
 ![WhatsApp Share Widget Generator](assets/img/whatsapp-share-widget.jpg)
 
-Transform your website visitors into powerful advocates! This easy-to-use tool creates beautiful WhatsApp sharing widgets that help your supporters share your petitions, campaigns, and causes directly with their friends and family.
+Allow people in you website to easily share your page by WhatsApp with just 1 click! This easy-to-use tool creates beautiful WhatsApp sharing widgets that help your supporters share your petitions, campaigns, and causes directly with their friends and family.
 
 ## 🚀 Why WhatsApp Sharing Works Better
 
