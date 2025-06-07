@@ -46,3 +46,4 @@ pids
 vendor/
 composer.lock
 EOF < /dev/null
+backups/
