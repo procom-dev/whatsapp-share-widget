@@ -416,7 +416,7 @@ $(document).ready(function() {
         const previewBubble = `<div style="position: relative; margin-left: 0.5rem; margin-bottom: 1rem; width: 100%;">
             <div style="background-color: white; border-radius: 0.5rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.31); overflow: hidden; position: relative; margin-left: 0.5rem;">
                 <div style="padding: 0.75rem;">
-                    <p style="color: #111b21; font-size: 14.2px; line-height: 19px; white-space: pre-line; margin: 0; border: none;">${htmlDescription}</p>
+                    <p style="color: #111b21 !important; font-size: 14.2px !important; line-height: 19px !important; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important; font-weight: normal !important; margin: 0 0 0 0 !important; letter-spacing: 0px !important; white-space: pre-line; border: none;">${htmlDescription}</p>
                 </div>
                 <a href="${shareUrl}" target="_blank" onclick="${redirectScript}" style="text-decoration: none; color: inherit;">
                     <div style="border-top: 1px solid rgba(0, 0, 0, 0.0625); margin: 5px; border-radius: 0.5rem; overflow: hidden; background-color: #f4f5f6; cursor: pointer; transition: background-color 0.2s;">
@@ -424,8 +424,8 @@ $(document).ready(function() {
                             ${imageHtml}
                         </div>
                         <div style="padding: 0.75rem; background-color: #f4f5f6;">
-                            <h3 style="all: unset; display: block; font-size: 14.2px; line-height: 19px; color: #111b21; font-weight: normal; margin: 0 0 0.125rem 0; padding: 0; border: none;">${data.title}</h3>
-                            <p style="font-size: 12.5px; line-height: 19px; color: #4b5563; margin: 0; padding: 0; border: none; border-top: none;">${data.domain}</p>
+                            <h3 style="all: unset; display: block; font-size: 14.2px !important; line-height: 19px !important; color: #111b21 !important; font-weight: normal !important; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important; margin: 0 0 0.125rem 0 !important; letter-spacing: 0px !important; padding: 0; border: none;">${data.title}</h3>
+                            <p style="font-size: 12.5px !important; line-height: 19px !important; color: #4b5563 !important; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important; font-weight: normal !important; margin: 0 0 0 0 !important; letter-spacing: 0px !important; padding: 0; border: none; border-top: none;">${data.domain}</p>
                         </div>
                     </div>
                 </a>
@@ -501,9 +501,9 @@ $(document).ready(function() {
                                 ${emailImageHtml}
                                 <tr>
                                     <td style="padding: 16px; background-color: #f4f5f6; border-radius: ${data.thumbnail ? '0 0 8px 8px' : '8px'};">
-                                        <h3 style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 14px; line-height: 19px; color: #111b21; font-weight: normal; margin: 0 0 4px 0;">${data.title}</h3>
+                                        <h3 style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important; font-size: 14px !important; line-height: 19px !important; color: #111b21 !important; font-weight: normal !important; margin: 0 0 4px 0 !important; letter-spacing: 0px !important;">${data.title}</h3>
                                         <a href="${shareUrl}" style="text-decoration: none; color: inherit;">
-                                            <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 10px; line-height: 19px; color: #4b5563; margin: 0;">${data.domain}</p>
+                                            <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important; font-size: 10px !important; line-height: 19px !important; color: #4b5563 !important; font-weight: normal !important; margin: 0 0 0 0 !important; letter-spacing: 0px !important;">${data.domain}</p>
                                         </a>
                                     </td>
                                 </tr>
