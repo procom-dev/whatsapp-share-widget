@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://sharer.wha.chat/sitemap.xml
+
+# Disallow crawling of assets that don't need indexing
+Disallow: /assets/css/
+Disallow: /assets/js/
+Disallow: /assets/img/favico.png
+Disallow: /fetch-metadata.php
+
+# Allow crawling of main image
+Allow: /assets/img/whatsapp-share-widget.png
+Allow: /assets/img/whatsapp-logo.png
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Cache directive
+Cache-control: public, max-age=86400

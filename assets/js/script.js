@@ -403,7 +403,7 @@ $(document).ready(function() {
             `setTimeout(function() { window.location.href = '${finalRedirectUrl}'; }, 500);` : '';
         
         // Create the WhatsApp button with PNG icon
-        const whatsappButton = `<a href="${shareUrl}" target="_blank" onclick="${redirectScript}" style="all: unset !important; width: 80% !important; background-color: #25D366 !important; color: white !important; font-weight: 600 !important; padding: 0.875rem 1rem !important; border-radius: 50px !important; border: none !important; cursor: pointer !important; display: flex !important; align-items: center !important; justify-content: center !important; gap: 0.5rem !important; transition: all 0.2s !important; position: relative !important; text-decoration: none !important;">
+        const whatsappButton = `<a href="${shareUrl}" target="_blank" onclick="${redirectScript}" style="all: unset !important; width: 80% !important; height: auto !important; background-color: #25D366 !important; color: white !important; font-weight: 600 !important; padding: 0.875rem 1rem !important; border-radius: 50px !important; border: none !important; cursor: pointer !important; display: flex !important; align-items: center !important; justify-content: center !important; gap: 0.5rem !important; transition: all 0.2s !important; position: relative !important; text-decoration: none !important; min-height: 48px !important;">
             <img src="${window.location.origin}/assets/img/whatsapp-logo.png" alt="WhatsApp" style="width: 20px !important; height: 20px !important; margin-right: 0.5rem !important;">
             ${data.buttonText}
         </a>`;
@@ -478,8 +478,8 @@ $(document).ready(function() {
         }
         
         // Create the WhatsApp button for email
-        const whatsappButton = `<a href="${shareUrl}" style="display: inline-block; background-color: #25D366; color: white; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 600; text-decoration: none; padding: 10px 20px; border-radius: 50px; text-align: center;">
-            <img src="${window.location.origin}/assets/img/whatsapp-logo.png" alt="WhatsApp" style="width: 16px; height: 16px; margin-right: 8px; vertical-align: middle;" onerror="this.style.display='none'; this.style.marginRight='0';">
+        const whatsappButton = `<a href="${shareUrl}" style="display: inline-block !important; width: auto !important; height: auto !important; min-width: 150px !important; min-height: 40px !important; background-color: #25D366 !important; color: white !important; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important; font-size: 14px !important; font-weight: 600 !important; text-decoration: none !important; padding: 10px 20px !important; border-radius: 50px !important; text-align: center !important;">
+            <img src="${window.location.origin}/assets/img/whatsapp-logo.png" alt="WhatsApp" style="width: 16px !important; height: 16px !important; margin-right: 8px !important; vertical-align: middle !important;" onerror="this.style.display='none'; this.style.marginRight='0';">
             ${data.buttonText}
         </a>`;
         
