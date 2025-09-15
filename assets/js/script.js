@@ -477,11 +477,17 @@ $(document).ready(function() {
             var shareUrl = `https://wa.me/?text=${encodedShareText}`;
         }
         
-        // Create the WhatsApp button for email
-        const whatsappButton = `<a href="${shareUrl}" style="display: inline-block !important; width: auto !important; height: auto !important; min-width: 150px !important; min-height: 40px !important; background-color: #25D366 !important; color: white !important; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important; font-size: 14px !important; font-weight: 600 !important; text-decoration: none !important; padding: 10px 20px !important; border-radius: 50px !important; text-align: center !important;">
-            <img src="${window.location.origin}/assets/img/whatsapp-logo.png" alt="WhatsApp" style="width: 16px !important; height: 16px !important; margin-right: 8px !important; vertical-align: middle !important;" onerror="this.style.display='none'; this.style.marginRight='0';">
-            ${data.buttonText}
-        </a>`;
+        // Create the WhatsApp button for email using table structure
+        const whatsappButton = `<table cellpadding="0" cellspacing="0" border="0" style="margin: 0 auto;">
+            <tr>
+                <td style="background-color: #25D366; border-radius: 50px; padding: 0; vertical-align: middle;">
+                    <a href="${shareUrl}" style="display: block; color: white !important; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important; font-size: 14px !important; font-weight: 600 !important; text-decoration: none !important; padding: 14px 28px !important; border-radius: 50px !important; text-align: center !important; white-space: nowrap; vertical-align: middle; line-height: 16px;">
+                        <img src="${window.location.origin}/assets/img/whatsapp-logo.png" alt="WhatsApp" style="width: 16px !important; height: 16px !important; margin-right: 8px !important; vertical-align: middle !important;" onerror="this.style.display='none'; this.style.marginRight='0';"><!--
+                        --><span style="vertical-align: middle;">${data.buttonText}</span>
+                    </a>
+                </td>
+            </tr>
+        </table>`;
         
         // Create the preview table with image error handling for email
         const emailImageHtml = data.thumbnail ? 
@@ -550,28 +556,7 @@ $(document).ready(function() {
     </tr>`;
         }
         
-        html += `\n</table>
-
-<style>
-@media screen and (max-width: 500px) {
-    table {
-        width: 100% !important;
-    }
-    td {
-        font-size: 14px !important;
-    }
-    h3 {
-        font-size: 12px !important;
-    }
-    p {
-        font-size: 10px !important;
-    }
-    a {
-        font-size: 12px !important;
-        padding: 8px 16px !important;
-    }
-}
-</style>`;
+        html += `\n</table>`;
         
         return html;
     }
