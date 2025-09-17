@@ -349,6 +349,21 @@ $(document).ready(function() {
             .replace(/_(.*?)_/g, '<em>$1</em>')
             .replace(/~(.*?)~/g, '<s>$1</s>');
     }
+
+    function generateShareText(description, finalUrl) {
+        // Check if description ends with a URL
+        const urlPattern = /https?:\/\/[^\s]+$/;
+        const endsWithUrl = urlPattern.test(description.trim());
+
+        if (endsWithUrl) {
+            // Use non-breaking spaces to separate URLs better
+            return `${description}\n\u00A0\n\u00A0\n\u00A0\n${finalUrl}`;
+        } else {
+            // Normal separation for text that doesn't end with URL
+            return `${description}\n\n\n${finalUrl}`;
+        }
+    }
+
     
     function updatePreviewAndCode() {
         const data = {
@@ -386,7 +401,7 @@ $(document).ready(function() {
         }
         
         // Add URL to the share text (keep WhatsApp formatting for the share text)
-        const shareText = `${data.description}\n\n${finalUrl}`;
+        const shareText = generateShareText(data.description, finalUrl);
         const encodedShareText = encodeURIComponent(shareText);
         
         const html = generateWidgetHtml(data, encodedShareText, htmlDescription, finalUrl, finalRedirectUrl);
@@ -398,12 +413,12 @@ $(document).ready(function() {
     }
     
     function generateWidgetHtml(data, encodedShareText, htmlDescription, finalUrl, finalRedirectUrl) {
-        const shareUrl = `https://wa.me/?text=${encodedShareText}`;
+        const shareUrl = `https://api.whatsapp.com/send?text=${encodedShareText}`;
         const redirectScript = finalRedirectUrl ? 
             `setTimeout(function() { window.location.href = '${finalRedirectUrl}'; }, 500);` : '';
         
         // Create the WhatsApp button with PNG icon
-        const whatsappButton = `<a href="${shareUrl}" target="_blank" onclick="${redirectScript}" style="all: unset !important; width: 80% !important; height: auto !important; background-color: #25D366 !important; color: white !important; font-weight: 600 !important; padding: 0.875rem 1rem !important; border-radius: 50px !important; border: none !important; cursor: pointer !important; display: flex !important; align-items: center !important; justify-content: center !important; gap: 0.5rem !important; transition: all 0.2s !important; position: relative !important; text-decoration: none !important; min-height: 48px !important;">
+        const whatsappButton = `<a href="${shareUrl}" target="_blank" onclick="${redirectScript}" style="all: unset !important; width: 80% !important; height: auto !important; background-color: #25D366 !important; color: white !important; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important; font-weight: 600 !important; padding: 0.25rem 0 !important; border-radius: 50px !important; border: none !important; cursor: pointer !important; display: flex !important; align-items: center !important; justify-content: center !important; gap: 0.5rem !important; transition: all 0.2s !important; position: relative !important; text-decoration: none !important; min-height: 48px !important;">
             <img src="${window.location.origin}/assets/img/whatsapp-logo.png" alt="WhatsApp" style="width: 20px !important; height: 20px !important; margin-right: 0.5rem !important;">
             ${data.buttonText}
         </a>`;
@@ -470,11 +485,11 @@ $(document).ready(function() {
             emailUrl = urlObj.toString();
             
             // Update share text for email
-            const emailShareText = `${data.description}\n\n${emailUrl}`;
+            const emailShareText = generateShareText(data.description, emailUrl);
             const emailEncodedShareText = encodeURIComponent(emailShareText);
-            var shareUrl = `https://wa.me/?text=${emailEncodedShareText}`;
+            var shareUrl = `https://api.whatsapp.com/send?text=${emailEncodedShareText}`;
         } else {
-            var shareUrl = `https://wa.me/?text=${encodedShareText}`;
+            var shareUrl = `https://api.whatsapp.com/send?text=${encodedShareText}`;
         }
         
         // Create the WhatsApp button for email using table structure
